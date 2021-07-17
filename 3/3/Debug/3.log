@@ -1,0 +1,4 @@
+﻿  돌아온 마이펫.cpp
+D:\Programming\Cpp_Practice\3\3\돌아온 마이펫.cpp(12,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'Animal' 왼쪽은 무시됩니다.
+D:\Programming\Cpp_Practice\3\3\돌아온 마이펫.cpp(12,10): warning C4091: '': 변수를 선언하지 않으면 'Animal' 왼쪽은 무시됩니다.
+  3.vcxproj -> D:\Programming\Cpp_Practice\3\Debug\3.exe
