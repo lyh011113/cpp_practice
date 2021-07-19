@@ -1,5 +1,5 @@
 #include<iostream>
- 
+
 typedef struct Animal {
 
 	char name[30]; // 이름
@@ -9,7 +9,7 @@ typedef struct Animal {
 	int food; // 배부른 정도
 	int clean; // 깨끗한 정도
 
-}; Animal;
+}; Animal; // 동물의 정보 한 구조 + Animal이 하나의 변수 종류로 정의
 
 void create_animal(Animal* animal) {
 	std::cout << "동물의 이름? ";
@@ -22,20 +22,20 @@ void create_animal(Animal* animal) {
 	animal->food = 100;
 	animal->clean = 100;
 }
-
+// 동물의 정보 생성식 함수
 void play(Animal* animal) {
-	animal->health+=10;
-	animal->food-=20;
-	animal->clean-=20;
+	animal->health += 10;
+	animal->food -= 20;
+	animal->clean -= 20;
 }
-
+// 동물 놀아주기 식
 void one_day_pass(Animal* animal) {
-//하루가 지나면
+	//하루가 지나면
 	animal->health -= 10;
 	animal->food -= 30;
 	animal->clean -= 20;
 }
-
+// 동물 시간 식
 void show_stat(Animal* animal) {
 
 	std::cout << animal->name << "의 상태" << std::endl;
@@ -44,37 +44,35 @@ void show_stat(Animal* animal) {
 	std::cout << "청결    :" << animal->clean << std::endl;
 
 }
-
+// 동물 상태 식
 
 int main() {
 
-
-	Animal* list[10];
-	int animal_num = 0;
-
+	Animal* list[10];// 10마리 생성
+	int animal_num = 0;// 동물 코드
 
 	for (;;) {
-	
+
 		std::cout << "1. 동물 추가하기" << std::endl;
 		std::cout << "2. 놀기" << std::endl;
 		std::cout << "3. 상태 보기" << std::endl;
 
 		int input;
-		std::cin >> input;
-	
+		std::cin >> input; // 버튼
+
 		switch (input) {
 
 			int play_with;
-		
+
 		case 1:
-			
+
 			list[animal_num] = new Animal;
 			create_animal(list[animal_num]);
-			
+
 			animal_num++;
 			break;
 
-		case 2 :
+		case 2:
 			std::cout << "누구랑 놀게? : ";
 			std::cin >> play_with;
 			if (play_with < animal_num)play(list[play_with]);
@@ -88,9 +86,9 @@ int main() {
 		}
 
 		for (int i = 0; i != animal_num; i++) {
-		
+
 			one_day_pass(list[i]);
-		
+
 		}
 	}
 	for (int i = 0; i != animal_num; i++) {
